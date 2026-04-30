@@ -1,0 +1,72 @@
+/* generate css for Login page using tailwindcss */
+
+.login-container {
+  @apply flex flex-col items-center justify-center min-h-screen bg-gray-100;
+}  
+
+.login-form {
+  @apply bg-white p-8 rounded-lg shadow-md w-full max-w-md;
+}
+
+.login-form h2 {
+  @apply text-2xl font-semibold mb-6 text-gray-800;
+}
+
+.login-form input {
+  @apply w-full p-3 mb-4 border border-gray-300 rounded;
+}
+
+.login-form button {
+  @apply w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition duration-200;
+}
+
+.login-form .social-login {
+  @apply flex items-center justify-center mt-4;
+}   
+
+.login-form .social-login button {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 mx-2;
+}
+
+.login-form .social-login button img {
+  @apply w-5 h-5;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 640px) {
+  .login-form {
+    @apply p-6;
+  }
+    .login-form h2 {
+        @apply text-xl;
+    }   
+    .login-form input {
+        @apply p-2;
+    }
+    .login-form button {
+        @apply p-2;
+    }
+}   
+
+/* Additional styles for dark mode */
+@media (prefers-color-scheme: dark) {
+  .login-container {
+    @apply bg-gray-900;
+  }
+  .login-form {
+    @apply bg-gray-800;
+  }
+  .login-form h2 {
+    @apply text-gray-100;
+  }
+  .login-form input {
+    @apply bg-gray-700 text-gray-100 border-gray-600;
+  }
+  .login-form button {          
+    @apply bg-blue-600 hover:bg-blue-700;
+  }
+  .login-form .social-login button {        
+    @apply bg-gray-700;
+  }
+}
+

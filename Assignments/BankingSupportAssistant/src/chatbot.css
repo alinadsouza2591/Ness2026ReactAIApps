@@ -1,0 +1,163 @@
+/* create a css file for the chatbot component, style it with a modern and clean design, 
+use a light color scheme with blue accents, make the chat bubbles rounded 
+and add some padding, 
+style the input area with a textarea and a send button, add some spacing between messages and between the input area and the messages, 
+make the chatbot responsive so it looks good on mobile devices as well */
+
+.chatbot-container {
+  width: 360px;
+  max-width: 95vw;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(20, 30, 50, 0.15);
+  background: #fafbff;
+  border: 1px solid rgba(99, 120, 255, 0.12);
+  overflow: hidden;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #4d7cff, #1b4fe9);
+  color: #ffffff;
+  padding: 18px 20px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.chatbot-messages {
+  max-height: 420px;
+  min-height: 280px;
+  padding: 18px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  background: #f5f8ff;
+}
+
+.chatbot-message {
+  display: flex;
+}
+
+.chatbot-message.user {
+  justify-content: flex-end;
+}
+
+.chatbot-message.assistant {
+  justify-content: flex-start;
+}
+
+.message-content {
+  max-width: 78%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  line-height: 1.5;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: 0 8px 20px rgba(15, 24, 55, 0.06);
+}
+
+.chatbot-message.user .message-content {
+  background: #3c68ff;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 18px;
+}
+
+.chatbot-message.assistant .message-content {
+  background: #ffffff;
+  color: #1f2937;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 18px;
+}
+
+.chatbot-error {
+  margin: 0 18px 12px;
+  padding: 12px 14px;
+  background: #ffe8e6;
+  border: 1px solid #ffb5b0;
+  color: #9b1c1c;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.chatbot-input-row {
+  padding: 14px 18px 20px;
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chatbot-input-row textarea {
+  width: 100%;
+  min-height: 76px;
+  resize: vertical;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #f7f9ff;
+  color: #111827;
+}
+
+.chatbot-input-row textarea:disabled {
+  opacity: 0.7;
+}
+
+.chatbot-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.chatbot-controls button {
+  min-width: 110px;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #3c68ff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chatbot-controls button:hover:not(:disabled) {
+  background: #2d52d5;
+}
+
+.chatbot-controls button:disabled {
+  background: #a5b1ff;
+  cursor: not-allowed;
+}
+
+.char-count {
+  font-size: 12px;
+  color: #475569;
+}
+
+.char-count.warning {
+  color: #b91c1c;
+}
+
+@media (max-width: 420px) {
+  .chatbot-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .chatbot-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chatbot-controls button {
+    width: 100%;
+  }
+}
